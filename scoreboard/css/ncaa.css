@@ -1,0 +1,129 @@
+.game-content 
+	{
+	border: 1px solid black;
+	width: 47%;
+	margin: 0 .5%;
+	float: left;
+	height: 150px;
+	}
+
+.status-content 
+	{
+	float: left;
+	margin-bottom: 20px; 
+	}
+	
+.game-status { text-align: center; }
+
+.team 
+	{
+	float: left;
+	width: 100%
+	}
+
+.team-rank 
+	{
+	float: left;
+	margin: 0px 5px 0px;
+	min-width: 20px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	}
+
+.team-info 
+	{
+	float: left;
+	}
+
+.point-total
+	{
+	float: right;
+	margin-right: 10px;
+	}
+.sprites { background: url(../images/sprites.png) no-repeat; }
+.team0 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -171px 0; }
+.team1 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -191px 0; }
+.team2 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -211px 0; }
+.team3 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -231px 0; }
+.team4 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -251px 0; }
+.team5 { display: inline-block; float: left; width: 21px; height: 24px; background-position: 0 0; }
+.team6 { display: inline-block; float: left; width: 21px; height: 24px; background-position: -22px 0; }
+.team7 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -271px 0; }
+.team8 { display: inline-block; float: left; width: 20px; height: 24px; background-position: -66px 0; }
+.team9 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -291px 0; }
+.team10 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -311px 0; }
+.team11 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -331px 0; }
+.team12 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -351px 0; }
+.team13 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -371px 0; }
+.team14 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -391px 0; }
+.team15 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -411px 0; }
+.team16 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -431px 0; }
+.team17 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -451px 0; }
+.team18 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -471px 0; }
+.team19 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -491px 0; }
+.team20 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -511px 0; }
+.team21 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -531px 0; }
+.team22 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -551px 0; }
+.team23 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -571px 0; }
+.team24 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -591px 0; }
+.team25 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -611px 0; }
+.team26 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -631px 0; }
+.team27 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -651px 0; }
+.team28 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -671px 0; }
+.team29 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -691px 0; }
+.team30 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -711px 0; }
+.team31 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -731px 0; }
+.team32 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -751px 0; }
+.team33 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -771px 0; }
+.team34 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -791px 0; }
+.team35 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -811px 0; }
+.team36 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -831px 0; }
+.team37 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -851px 0; }
+.team38 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -871px 0; }
+.team39 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -891px 0; }
+.team40 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -911px 0; }
+.team41 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -931px 0; }
+.team42 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -951px 0; }
+.team43 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -971px 0; }
+.team44 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -991px 0; }
+.team45 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1011px 0; }
+.team46 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1031px 0; }
+.team47 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1051px 0; }
+.team48 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1071px 0; }
+.team49 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1091px 0; }
+.team50 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1111px 0; }
+.team51 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1131px 0; }
+.team52 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1151px 0; }
+.team53 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1171px 0; }
+.team54 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1191px 0; }
+.team55 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1211px 0; }
+.team56 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1231px 0; }
+.team57 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1251px 0; }
+.team58 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1271px 0; }
+.team59 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1291px 0; }
+.team60 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1311px 0; }
+.team61 { display: inline-block; float: left; width: 20px; height: 24px; background-position: -87px 0; }
+.team62 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1331px 0; }
+.team63 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1351px 0; }
+.team64 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1371px 0; }
+.team65 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1391px 0; }
+.team66 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1411px 0; }
+.team67 { display: inline-block; float: left; width: 20px; height: 24px; background-position: -108px 0; }
+.team68 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1431px 0; }
+.team69 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1451px 0; }
+.team70 { display: inline-block; float: left; width: 20px; height: 24px; background-position: -129px 0; }
+.team71 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1471px 0; }
+.team72 { display: inline-block; float: left; width: 21px; height: 24px; background-position: -44px 0; }
+.team73 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1491px 0; }
+.team74 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1511px 0; }
+.team75 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1531px 0; }
+.team76 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1551px 0; }
+.team77 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1571px 0; }
+.team78 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1591px 0; }
+.team79 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1611px 0; }
+.team80 { display: inline-block; float: left; width: 20px; height: 24px; background-position: -150px 0; }
+.team81 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1631px 0; }
+.team82 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1651px 0; }
+.team83 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1671px 0; }
+.team84 { display: inline-block; float: left; width: 19px; height: 24px; background-position: -1691px 0; }

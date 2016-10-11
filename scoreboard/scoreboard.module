@@ -1,0 +1,226 @@
+<?php
+
+/**
+ * @file
+ * scoreboard module.
+ */
+
+function scoreboard_permission() {
+  return array(
+    'access scoreboard' => array(
+      'title' => t('Access Scoreboard'),
+      'description' => t('Perform administration tasks for my module.'),
+    ),
+  );
+}
+/**
+ * Implements hook_block_info().
+ */
+function scoreboard_block_info() {
+  // This example comes from node.module.
+  $blocks['scoreboard'] = array(
+    'info' => t('Scoreboard'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+/*function scoreboard_block_view($delta='') {
+
+  $block = array();
+
+  switch($delta) {
+    case 'scoreboard' :
+      $block['content'] = array(
+      	'#markup'=>_scoreboard_function(),
+      	'#path'=>'scoreboard'
+      	);
+      break;
+  }
+
+  return $block;
+}
+*/
+function scoreboard_view() {
+
+  $block = array();
+
+  switch($delta) {
+    case 'scoreboard' :
+      $block['content'] = array(
+      	'#markup'=>_scoreboard_function(),
+      	'#path'=>'scoreboard'
+      	);
+      break;
+  }
+
+  return $block;
+}
+
+  function scoreboard_menu() {
+    $items['scoreboard'] = array(
+      'title'=>'Scoreboard',
+      'type' => MENU_NORMAL_ITEM,
+ //     'page callback' => 'scoreboard_scores',
+      'access arguments' => array('access content'),
+      'page callback' => '_scoreboard_view',
+    );
+    return $items;
+  }
+
+
+function scoreboard_scores() 
+	{
+		return"<strong>This is a test.</strong>";
+	}
+/**
+ * Custom function to assemble renderable array for block content.
+ * Returns a renderable array with the block content.
+ * @return
+ *   returns a renderable array of block content.
+ */
+
+function _scoreboard_view() {
+  $output = '';
+
+  //This is the json array from the "APIs".
+  $json = "http://i.turner.ncaa.com/sites/default/files/external/test/scoreboard.json";
+
+  //retreive and parse the json from URL.
+  $request = drupal_http_request($json);
+  $decoded_json = drupal_json_decode($request->data);
+
+
+  //get the array position needed for retrieve the 'data' element.
+  $scoreboard_array = $decoded_json;
+
+ // 	echo "scoreboard_array: <pre>" .var_export($scoreboard_array, true) . "</pre>";
+$live = '';
+$pre = '';
+$final = '';
+$i = 0;
+  	$output .= '<div class="status-content">';
+
+  //loop through the json data and add it to the $output array. 
+  foreach($scoreboard_array as $games => $game ) 
+  {
+//echo "game: <pre>" .var_export($game, true) . "</pre>";
+//echo "game state: " . $game['state'];
+
+	if($game['state'] == 'live')
+	{
+		$live .= '<div class="game-content">
+					
+					<div class="game-status">'. $game['state'] . '</div>
+					<div class="team">
+						<span class="team-logo team'.$i++.' sprites"></span>
+					<span class="team-rank">'. 
+						($game['home']['rank'] == 0 ? "" :  $game['home']['rank']) .'
+					</span>
+						<div class="team-info">
+							<span class="team-name">'.$game['home']['name'].'</span>
+							<span class="team-travel">(home)</span><br>
+							<span class="team-record">'. $game['home']['record'] .'</span>
+						</div>
+						<span class="point-total">'. $game['home']['score'] .'</span>
+					</div>';
+
+					
+				$live .= '
+					<div class="team">
+						<span class="team-logo team'.$i++.' sprites"></span>
+						<span class="team-rank">'. 
+							($game['away']['rank'] == 0 ? "" :  $game['away']['rank']) .'
+						</span>
+						<div class="team-info">
+							<span class="team-name">'.$game['away']['name'].'</span>
+							<span class="team-travel">(away)</span><br>
+							<span class="team-record">'. $game['away']['record'] .'</span>
+						</div>
+						<span class="point-total">'. $game['away']['score'] .'</span>
+					</div>
+				</div>';
+		}
+	elseif ($game['state'] == 'pre') {
+
+
+		$pre .= '<div class="game-content">
+					<div class="game-status">'. $game['state'] . '</div>
+					<div class="team">
+					<span class="team-logo team'.$i++.' sprites"></span>
+					<span class="team-rank">'. 
+						($game['home']['rank'] == 0 ? "" :  $game['home']['rank']) .'
+					</span>
+						<div class="team-info">
+							<span class="team-name">'.$game['home']['name'].'</span>
+							<span class="team-travel">(home)</span><br>
+							<span class="team-record">'. $game['home']['record'] .'</span>
+						</div>
+						<span class="point-total">'. 
+						($game['home']['score'] == 0 ? "" :  "score: ". $game['home']['score']) .'
+						</span>
+			
+					</div>';
+
+					
+		$pre .= '<div class="team">
+						<span class="team-logo team'.$i++.' sprites"></span>
+						<span class="team-rank">'. 
+							($game['away']['rank'] == 0 ? "" :  $game['away']['rank']) .'
+						</span>						<div class="team-info">
+							<span class="team-name">'.$game['away']['name'].'</span>
+							<span class="team-travel">(away)</span><br>
+							<span class="team-record">'. $game['away']['record'] .'</span>
+						</div>
+						<span class="point-total">'. 
+						($game['away']['score'] == 0 ? "" :  "score: ". $game['away']['score']) 
+						.'</span>
+					</div>
+				</div>';
+	}
+	elseif ($game['state'] == 'final') {
+		$final .= '<div class="game-content">
+					<div class="game-status">'. $game['state'] . '</div>
+					<div class="team">
+					<span class="team-logo team'.$i++.' sprites"></span>
+					<span class="team-rank">'. 
+						($game['home']['rank'] == 0 ? "" :  $game['home']['rank']) .'
+					</span>
+						<div class="team-info">
+							<span class="team-name">'.$game['home']['name'].'</span>
+							<span class="team-travel">(home)</span><br>
+							<span class="team-record">'. $game['home']['record'] .'</span>
+						</div>
+						<span class="point-total">'. 
+						($game['home']['score'] == 0 ? "" :  "score: ". $game['home']['score']) .'
+						</span>
+			
+					</div>';
+
+					
+		$final .= '<div class="team">
+						<span class="team-logo team'.$i++.' sprites"></span>
+						<span class="team-rank">'. 
+							($game['away']['rank'] == 0 ? "" :  $game['away']['rank']) .'
+						</span>						<div class="team-info">
+							<span class="team-name">'.$game['away']['name'].'</span>
+							<span class="team-travel">(away)</span><br>
+							<span class="team-record">'. $game['away']['record'] .'</span>
+						</div>
+						<span class="point-total">'. 
+						($game['away']['score'] == 0 ? "" :  "score: ". $game['away']['score']) 
+						.'</span>
+					</div>
+				</div>';	
+			}
+  }
+  $all_games = '<div class="status-content">'.$live.'</div>
+  				<div class="status-content">'.$pre.'</div>
+  				<div class="status-content">'.$final.'</div>';
+
+  return $all_games;
+}
